@@ -15,6 +15,16 @@ namespace DemoInfo
 
 		public Vector Position { get; set; }
 
+		public Vector EyeOffset { get; set; }
+
+		//this is where the player aims out of
+		public Vector EyePosition {
+			get
+			{
+				return Position + EyeOffset;
+			}
+		}
+
 		public int EntityID { get; set; }
 
 		public int HP { get; set; }
@@ -110,6 +120,9 @@ namespace DemoInfo
 
 			if (Position != null)
 				me.Position = Position.Copy(); //Vector is a class, not a struct - thus we need to make it thread-safe. 
+
+			if (EyeOffset != null)
+				me.EyeOffset = EyeOffset.Copy();
 
 			if (LastAlivePosition != null)
 				me.LastAlivePosition = LastAlivePosition.Copy();
