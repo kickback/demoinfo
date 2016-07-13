@@ -73,6 +73,8 @@ namespace DemoInfo
 			get { return HP > 0; }
 		}
 
+		public int Spotted { get; set; }
+
 		public Team Team { get; set; }
 
 		public bool HasDefuseKit { get; set; }
@@ -112,6 +114,7 @@ namespace DemoInfo
 			me.ViewDirectionY = ViewDirectionY;
 			me.Disconnected = Disconnected;
 			me.FlashDuration = FlashDuration;
+			me.Spotted = Spotted;
 
 			me.Team = Team;
 
