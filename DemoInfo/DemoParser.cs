@@ -882,6 +882,7 @@ namespace DemoInfo
 			playerEntity.FindProperty("m_angEyeAngles[0]").FloatRecived += (sender, e) => p.ViewDirectionY = e.Value;
 			playerEntity.FindProperty("m_flFlashDuration").FloatRecived += (sender, e) => p.FlashDuration = e.Value;
 			playerEntity.FindProperty("m_bSpotted").IntRecived += (sender, e) => p.Spotted = e.Value;
+			playerEntity.FindProperty("m_bIsScoped").IntRecived += (sender, e) => p.Scoped = e.Value;
 
 
 			playerEntity.FindProperty("localdata.m_vecVelocity[0]").FloatRecived += (sender, e) => p.Velocity.X = e.Value;

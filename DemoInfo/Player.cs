@@ -75,6 +75,8 @@ namespace DemoInfo
 
 		public int Spotted { get; set; }
 
+		public int Scoped { get; set; }
+
 		public Team Team { get; set; }
 
 		public bool HasDefuseKit { get; set; }
