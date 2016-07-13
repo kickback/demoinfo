@@ -844,6 +844,7 @@ namespace DemoInfo
 			p.EntityID = playerEntity.ID;
 			p.Entity = playerEntity;
 			p.Position = new Vector();
+			p.EyeOffset = new Vector();
 			p.Velocity = new Vector();
 
 			//position update
@@ -886,6 +887,9 @@ namespace DemoInfo
 			playerEntity.FindProperty("localdata.m_vecVelocity[1]").FloatRecived += (sender, e) => p.Velocity.Y = e.Value;
 			playerEntity.FindProperty("localdata.m_vecVelocity[2]").FloatRecived += (sender, e) => p.Velocity.Z = e.Value;
 
+			playerEntity.FindProperty("localdata.m_vecViewOffset[0]").FloatRecived += (sender, e) => p.EyeOffset.X = e.Value;
+			playerEntity.FindProperty("localdata.m_vecViewOffset[1]").FloatRecived += (sender, e) => p.EyeOffset.Y = e.Value;
+			playerEntity.FindProperty("localdata.m_vecViewOffset[2]").FloatRecived += (sender, e) => p.EyeOffset.Z = e.Value;
 
 
 			playerEntity.FindProperty("m_unCurrentEquipmentValue").IntRecived += (sender, e) => p.CurrentEquipmentValue = e.Value;
